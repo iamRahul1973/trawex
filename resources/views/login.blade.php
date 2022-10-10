@@ -1,23 +1,28 @@
 <x-layout>
     <form method="POST" action="/login" id="loginForm">
+        <h2>Login</h2>
         <div id="errorContainer" style="color: red"></div>
-        <div>
-            <label for="email">Username : </label>
-            <input type="text" name="email" id="email" required />
-        </div>
-        @error('email')
-            <p style="color: red; font-size: 14px">{{ $message }}</p>
-        @enderror
-        <div>
-            <label for="password">Password : </label>
-            <input type="text" name="password" id="password" required />
-        </div>
-        @error('password')
-            <p style="color: red; font-size: 14px">{{ $message }}</p>
-        @enderror
-        <div>
-            @csrf
-            <input type="submit" value="Login">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label" for="email">Username : </label>
+                    <input type="text" name="email" id="email" required class="form-control" />
+                </div>
+                @error('email')
+                    <p style="color: red; font-size: 14px">{{ $message }}</p>
+                @enderror
+                <div class="mb-3">
+                    <label class="form-label" for="password">Password : </label>
+                    <input type="text" name="password" id="password" required class="form-control" />
+                </div>
+                @error('password')
+                    <p style="color: red; font-size: 14px">{{ $message }}</p>
+                @enderror
+                <div>
+                    @csrf
+                    <input type="submit" value="Login">
+                </div>
+            </div>
         </div>
     </form>
 

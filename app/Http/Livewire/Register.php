@@ -44,11 +44,11 @@ class Register extends Component
             'password' => Hash::make($this->password),
         ]);
 
-        $user->createToken('user_token');
+        $token = $user->createToken('user_token');
 
         $this->reset();
 
-        session()->flash('success', 'User has been registered successfully.');
+        session()->flash('success', "User has been registered successfully. Token : {$token->plainTextToken}");
     }
 
     public function render()

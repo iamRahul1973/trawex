@@ -48,7 +48,7 @@ class Register extends Component
 
         $this->reset();
 
-        session()->flash('success', 'User has been registered successfully');
+        session()->flash('success', 'User has been registered successfully.');
     }
 
     public function render()

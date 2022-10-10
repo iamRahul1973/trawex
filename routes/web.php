@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,5 @@ Route::post('/login', LoginController::class);
 Route::get('/dashboard', function () {
     return 'You are logged in';
 })->middleware('auth');
+
+Route::middleware('auth:sanctum')->get('users', UserListController::class);
